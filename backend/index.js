@@ -25,24 +25,31 @@ const logging = [logTime, logOriginalUrl, logMethod]
 app.use(logging)
 
 app.get('/', async (req, res) => {
-    res.send('Hello World');
+    res.status(500).json({
+        "status": "success/ fail",
+        "data": {
+            "message": "Hello World"
+        }})
 });
 
-// Show what an error looks like
-app.get('/error', async (req, res) => {
-    throw new Error("Mein Künstlicher Error")
-})
-
 // Wildcard Routes
-app.get('/*splat', async (req, res) => {
-    res.send('Hello World - from Wildcard');
+app.use('/*splat', async (req, res) => {
+    throw new Error(`Route ${req.method}:${req.originalUrl} was not found`)
 })
 
 // Error Handling 
 // from: https://expressjs.com/en/guide/error-handling.html
+// .json responses 
+// from: https://stackoverflow.com/questions/12806386/is-there-any-standard-for-json-api-response-format
+// and: https://github.com/omniti-labs/jsend
 app.use((err, req, res, next) => {
     console.error(err.stack)
-    res.status(500).send('Error Middleware')
+    res.status(500).json({
+        "status": "error",
+        "error": {
+            "message": err.message,
+            "code": err.code
+        }})
 })
 
 // Server starten
