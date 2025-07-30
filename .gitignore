@@ -1,0 +1,16 @@
+# Backend and Frontend
+*/package-lock.json
+node_modules/
+
+# All Enviroments
+*.env
+
+# Logs
+*.log
+
+# DB - no Emails, Login Information
+db/seed.sql
+
+# Bruno - no Tockens, Emails, Login Information
+# This Block can later be lessend, if Information is ok
+bruno
