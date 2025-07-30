@@ -16,7 +16,7 @@ And in general, I want to the entire journey until deployment. And with a look i
 
 But in all this I should not forget **Automated Tests**. Those should give me comfort when I change something and for a decent deployment pipeline.
 
-I will also try out another folder architecture, as I think the *feature* oriented approche would be simpler for this project size.
+I will also try out another [folder architecture](#folder-structure), as I think the *feature* oriented approche would be simpler for this project size.
 
 ## The Project
 
@@ -49,3 +49,21 @@ npm run dev
 ```
 
 This will start the backend with nodedeamon which will update the webstore if you save a file of: Example `.js`.
+
+### Folder Structure
+
+I still need to decide this one:
+
+- [Detailed Struture](https://dev.to/larswaechter/how-i-structure-my-rest-apis-11k4) for each subfolder
+- [General Structure](https://medium.com/@amirm.lavasani/how-to-structure-your-fastapi-projects-0219a6600a8f) File-Type vs Feature-Type
+
+## Techstack
+
+| Tech                                         | Usecase                            |
+| -------------------------------------------- | ---------------------------------- |
+| [Node JS](https://nodejs.org/en)             | For Use in Backend and Frontend    |
+| [Express](https://expressjs.com/)            | For Routing                        |
+| [Postgres](https://www.postgresql.org/)      | Database of Choice                 |
+| [Docker](https://www.docker.com/)            | Containering and ease of Deploment |
+| [Bruno](https://www.usebruno.com/)           | For Testing Backend                |
+| [Figma](https://www.figma.com/), Pen & Paper | Design                             |
